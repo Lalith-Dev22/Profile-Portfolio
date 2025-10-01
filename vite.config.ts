@@ -4,38 +4,36 @@ import path from "path";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
+  // Load environment variables
   const env = loadEnv(mode, process.cwd(), '');
-  
+
   return {
-    // Set base path for production builds
-    base: mode === 'production' ? '/' : '/',
-    server: {
-      host: "::",
-      port: 8080,
-      // Only add CSP headers in development mode to avoid security issues in production
-      ...(mode === 'development' ? {
-        headers: {
-          "Content-Security-Policy": "script-src 'self' 'unsafe-inline' 'unsafe-eval' http://localhost:* ws://localhost:*; object-src 'none'; connect-src 'self' http://localhost:* ws://localhost:*;"
-        }
-      } : {}),
-      // Enable HMR overlay for better error handling
-      hmr: {
-        overlay: true
-      }
-    },
+    base: '/', // Base path for production
     plugins: [react()],
     resolve: {
       alias: {
-        "@": path.resolve(__dirname, "./src"),
+        "@": path.resolve(__dirname, "./src"), // Ensure @ alias works
       },
     },
+    server: {
+      host: "::",
+      port: 8080,
+      hmr: { overlay: true },
+      // Only add CSP headers in development
+      ...(mode === 'development' ? {
+        headers: {
+          "Content-Security-Policy":
+            "script-src 'self' 'unsafe-inline' 'unsafe-eval' http://localhost:* ws://localhost:; object-src 'none'; connect-src 'self' http://localhost: ws://localhost:;"
+        }
+      } : {})
+    },
     build: {
-      outDir: "dist",
+      outDir: "dist", // Output folder for production
+      target: "esnext",
+      chunkSizeWarningLimit: 1000,
       rollupOptions: {
-        external: [],
         output: {
-          manualChunks: (id) => {
-            // Split vendor chunks
+          manualChunks(id) {
             if (id.includes('node_modules')) {
               if (id.includes('react') || id.includes('react-dom') || id.includes('react-router-dom')) {
                 return 'vendor-react';
@@ -51,15 +49,10 @@ export default defineConfig(({ mode }) => {
               }
               return 'vendor';
             }
-          },
+          }
         }
       },
-      commonjsOptions: {
-        transformMixedEsModules: true
-      },
-      target: "esnext",
-      // Increase chunk size warning limit to reduce warnings
-      chunkSizeWarningLimit: 1000
+      commonjsOptions: { transformMixedEsModules: true }
     },
     define: {
       'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'production')
