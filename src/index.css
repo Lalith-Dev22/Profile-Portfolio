@@ -103,7 +103,7 @@ All colors MUST be HSL.
 @layer utilities {
   /* Gradient backgrounds */
   .bg-gradient-radial {
-    background-image: radial-gradient(var(--tw-gradient-stops));
+    background-image: radial-gradient(circle at center, var(--tw-gradient-stops));
   }
   
   /* Custom scrollbar */
