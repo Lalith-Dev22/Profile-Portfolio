@@ -13,9 +13,7 @@ import Lenis from 'lenis';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Star, Users, Zap, Award, ArrowDown, Sparkles } from 'lucide-react';
-import Skiper19 from "@/components/ui/skiper19-section";
 import HeroScrollDemo from "@/components/ui/container-scroll-animation-demo";
-import Skiper31 from "@/components/ui/skiper31-section";
 import CircularGallery from "@/components/CircularGallery";
 
 
