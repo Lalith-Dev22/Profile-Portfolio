@@ -71,6 +71,12 @@ For Vercel:
 3. Import your repository
 4. Deploy!
 
+**Note for Vercel Deployment:**
+- Make sure to set the "Build Command" to `npm run build`
+- Set the "Output Directory" to `dist`
+- The project includes a `vercel.json` configuration file for proper deployment
+- If you encounter build errors, try setting the Node.js version to 18.x or 20.x in your Vercel project settings
+
 ## Custom Domain Configuration
 
 Yes, you can connect a custom domain to your project!
