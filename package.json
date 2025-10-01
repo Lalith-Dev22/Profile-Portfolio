@@ -104,10 +104,9 @@
     "vite": "^6.3.6"
   },
   "overrides": {
-  "core-js": "^3.34.0",
-  "glob": "^9.3.5",
-  "inflight": false,
-  "q": false
-}
-
+    "core-js": "^3.34.0",
+    "glob": "^9.3.5",
+    "inflight": false,
+    "q": false
+  }
 }

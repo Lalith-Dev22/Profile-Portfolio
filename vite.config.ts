@@ -37,7 +37,7 @@ export default defineConfig(({ mode }) => {
           manualChunks: (id) => {
             // Split vendor chunks
             if (id.includes('node_modules')) {
-              if (id.includes('react')) {
+              if (id.includes('react') || id.includes('react-dom') || id.includes('react-router-dom')) {
                 return 'vendor-react';
               }
               if (id.includes('framer-motion') || id.includes('gsap')) {
@@ -61,7 +61,11 @@ export default defineConfig(({ mode }) => {
       // Increase chunk size warning limit to reduce warnings
       chunkSizeWarningLimit: 1000
     },
+    define: {
+      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'production')
+    },
     optimizeDeps: {
+      include: ['react', 'react-dom', 'react-router-dom'],
       exclude: []
     }
   };
