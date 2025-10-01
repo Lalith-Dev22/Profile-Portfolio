@@ -102,15 +102,15 @@ export const Footer = () => {
               </div>
               <div>
                 <h3 className="text-2xl font-bold bg-gradient-to-r from-red-400 to-pink-600 bg-clip-text text-transparent">Cosmic Lumina</h3>
-                <p className="text-gray-400 text-sm">Lightning Web Animations</p>
+                <div className="text-gray-400 text-sm">Lightning Web Animations</div>
               </div>
             </div>
             
-            <p className="text-gray-300 mb-8 max-w-md leading-relaxed">
+            <div className="text-gray-300 mb-8 max-w-md leading-relaxed">
               Illuminating the future with cutting-edge web animations. 
               Built with modern technologies for developers who appreciate 
               <span className="text-red-400 font-semibold"> cosmic craftsmanship</span>.
-            </p>
+            </div>
             
             {/* Enhanced social links */}
             <div className="flex space-x-4 mb-6">
@@ -134,7 +134,7 @@ export const Footer = () => {
             
             {/* Newsletter signup */}
             <div className="space-y-3">
-              <p className="text-sm text-gray-400">Stay updated with cosmic news</p>
+              <div className="text-sm text-gray-400">Stay updated with cosmic news</div>
               <div className="flex space-x-2">
                 <input 
                   type="email" 
@@ -246,7 +246,7 @@ export const Footer = () => {
           
           <div className="flex flex-col lg:flex-row justify-between items-center pt-8 space-y-6 lg:space-y-0">
             <div className="flex flex-col lg:flex-row items-center space-y-4 lg:space-y-0 lg:space-x-8">
-              <p className="text-gray-400 text-sm flex items-center space-x-2">
+              <div className="text-gray-400 text-sm flex items-center space-x-2">
                 <span>© 2024 Cosmic Lumina. Crafted with</span>
                 <motion.div
                   animate={{ scale: [1, 1.2, 1] }}
@@ -256,7 +256,7 @@ export const Footer = () => {
                 </motion.div>
                 <span>and lightning</span>
                 <Zap className="w-4 h-4 text-yellow-400" />
-              </p>
+              </div>
               
               <div className="flex items-center space-x-4 text-sm">
                 <motion.button 
@@ -297,9 +297,9 @@ export const Footer = () => {
           
           {/* Additional branding */}
           <div className="text-center mt-8 pt-6 border-t border-red-500/10">
-            <p className="text-gray-500 text-xs">
+            <div className="text-gray-500 text-xs">
               Powered by cosmic energy and modern web technologies • Built for the future of web animation
-            </p>
+            </div>
           </div>
         </motion.div>
       </div>

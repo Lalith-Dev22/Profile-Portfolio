@@ -81,15 +81,18 @@ export const CTASection = () => {
       });
     }
 
-    // Continuous glow animation
-    gsap.to(".cta-glow", {
-      scale: 1.1,
-      opacity: 0.8,
-      duration: 2,
-      ease: "power2.inOut",
-      repeat: -1,
-      yoyo: true
-    });
+    // Continuous glow animation - only if elements exist
+    const glowElements = document.querySelectorAll(".cta-glow");
+    if (glowElements.length > 0) {
+      gsap.to(glowElements, {
+        scale: 1.1,
+        opacity: 0.8,
+        duration: 2,
+        ease: "power2.inOut",
+        repeat: -1,
+        yoyo: true
+      });
+    }
 
   }, []);
 
@@ -143,13 +146,13 @@ export const CTASection = () => {
             </span>
           </h2>
           
-          <p className="text-xl text-gray-300 mb-6 max-w-3xl mx-auto leading-relaxed">
+          <div className="text-xl text-gray-300 mb-6 max-w-3xl mx-auto leading-relaxed">
             Join the elite community of developers creating next-generation web experiences
-          </p>
+          </div>
           
-          <p className="text-lg text-gray-400 max-w-2xl mx-auto">
+          <div className="text-lg text-gray-400 max-w-2xl mx-auto">
             Professional-grade animations with enterprise-level performance
-          </p>
+          </div>
         </motion.div>
 
         {/* Premium buttons with sophisticated design */}

@@ -769,7 +769,7 @@ export const HeroSection: React.FC = () => {
             transition={{ delay: 1.1, duration: 1, ease: "easeOut" }}
             className="text-3xl md:text-5xl lg:text-6xl pb-8 font-semibold bg-gradient-to-r from-red-400 via-pink-500 to-purple-600 bg-clip-text text-transparent mb-6 tracking-wide"
           >
-            Features That <span className="bg-gradient-to-r from-pink-400 via-red-500 to-purple-600 bg-clip-text text-transparent">Illuminate</span>
+            <div>Features That <span className="bg-gradient-to-r from-pink-400 via-red-500 to-purple-600 bg-clip-text text-transparent">Illuminate</span></div>
           </motion.h2>
         </motion.div>
       </div>
