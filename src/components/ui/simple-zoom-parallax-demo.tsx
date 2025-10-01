@@ -4,7 +4,7 @@ import { cn } from '@/lib/utils';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, Zap, Layers, Eye, Star, Rocket, Globe, Code, Palette, ChevronDown } from 'lucide-react';
 import { motion } from 'framer-motion';
-import Lenis from '@studio-freight/lenis'
+import Lenis from 'lenis'
 import { ZoomParallax } from "@/components/ui/simple-zoom-parallax";
 import { HeroSection, Lightning } from "@/components/ui/hero-odyssey";
 
