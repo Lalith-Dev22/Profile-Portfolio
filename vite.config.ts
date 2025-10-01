@@ -15,6 +15,7 @@ export default defineConfig({
     },
   },
   build: {
+    outDir: "dist",
     rollupOptions: {
       external: [],
       output: {
@@ -27,6 +28,6 @@ export default defineConfig({
     target: "esnext"
   },
   optimizeDeps: {
-    exclude: ["rollup"]
+    exclude: []
   }
 });
