@@ -16,7 +16,6 @@ import { Star, Users, Zap, Award, ArrowDown, Sparkles } from 'lucide-react';
 import Skiper19 from "@/components/ui/skiper19-section";
 import HeroScrollDemo from "@/components/ui/container-scroll-animation-demo";
 import Skiper31 from "@/components/ui/skiper31-section";
-import LaserFlow from "@/components/LaserFlow";
 import CircularGallery from "@/components/CircularGallery";
 
 
@@ -100,24 +99,6 @@ const Index = () => {
           <div className="features-section -mt-16">
             <FeaturesSection />
           </div>
-          {/* <div className="laser-flow-section h-[30vh] w-full -mt-10 md:h-[40vh] lg:h-[50vh]">
-            <LaserFlow 
-              color="#ec4899" 
-              wispDensity={1.0}
-              fogIntensity={0.3}
-              flowSpeed={0.2}
-              wispSpeed={8.0}
-              wispIntensity={3.0}
-              verticalSizing={1.5}
-              horizontalSizing={0.6}
-              fogScale={0.25}
-              flowStrength={0.15}
-              decay={1.0}
-              falloffStart={1.0}
-              fogFallSpeed={0.3}
-              className="w-full h-full"
-            />
-          </div> */}
           {/* about section  */}
           <div className="globe-feature-section -mt-0">
             <div className="max-w-7xl mx-auto px-4 mt- mb-0">
