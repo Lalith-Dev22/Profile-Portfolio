@@ -16,10 +16,17 @@ export default defineConfig({
   },
   build: {
     rollupOptions: {
-      external: []
+      external: [],
+      output: {
+        manualChunks: undefined,
+      }
     },
     commonjsOptions: {
       transformMixedEsModules: true
-    }
+    },
+    target: "esnext"
+  },
+  optimizeDeps: {
+    exclude: ["rollup"]
   }
 });
