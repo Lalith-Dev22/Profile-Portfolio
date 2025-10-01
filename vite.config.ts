@@ -15,7 +15,11 @@ export default defineConfig(({ mode }) => {
         headers: {
           "Content-Security-Policy": "script-src 'self' 'unsafe-inline' 'unsafe-eval' http://localhost:* ws://localhost:*; object-src 'none'; connect-src 'self' http://localhost:* ws://localhost:*;"
         }
-      } : {})
+      } : {}),
+      // Enable HMR overlay for better error handling
+      hmr: {
+        overlay: true
+      }
     },
     plugins: [react()],
     resolve: {
