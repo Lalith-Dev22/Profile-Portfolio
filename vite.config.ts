@@ -28,13 +28,32 @@ export default defineConfig(({ mode }) => {
       rollupOptions: {
         external: [],
         output: {
-          manualChunks: undefined,
+          manualChunks: (id) => {
+            // Split vendor chunks
+            if (id.includes('node_modules')) {
+              if (id.includes('react')) {
+                return 'vendor-react';
+              }
+              if (id.includes('framer-motion') || id.includes('gsap')) {
+                return 'animations';
+              }
+              if (id.includes('@radix-ui') || id.includes('@tabler') || id.includes('lucide-react')) {
+                return 'ui';
+              }
+              if (id.includes('tailwind') || id.includes('clsx') || id.includes('class-variance-authority')) {
+                return 'utils';
+              }
+              return 'vendor';
+            }
+          },
         }
       },
       commonjsOptions: {
         transformMixedEsModules: true
       },
-      target: "esnext"
+      target: "esnext",
+      // Increase chunk size warning limit to reduce warnings
+      chunkSizeWarningLimit: 1000
     },
     optimizeDeps: {
       exclude: []
