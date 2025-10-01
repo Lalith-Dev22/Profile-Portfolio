@@ -68,6 +68,7 @@
     "lenis": "^1.3.11",
     "lucide-react": "^0.544.0",
     "motion": "^12.23.22",
+    "motion-react": "^0.15.0-alpha.1",
     "next-themes": "^0.3.0",
     "ogl": "^1.0.11",
     "react": "^18.3.1",
@@ -103,9 +104,10 @@
     "vite": "^6.3.6"
   },
   "overrides": {
-    "core-js": "^3.34.0",
-    "glob": "^9.3.5",
-    "inflight": false,
-    "q": false
-  }
+  "core-js": "^3.34.0",
+  "glob": "^9.3.5",
+  "inflight": false,
+  "q": false
+}
+
 }

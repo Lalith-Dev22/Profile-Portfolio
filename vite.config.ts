@@ -7,6 +7,8 @@ export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), '');
   
   return {
+    // Set base path for production builds
+    base: mode === 'production' ? './' : '/',
     server: {
       host: "::",
       port: 8080,
