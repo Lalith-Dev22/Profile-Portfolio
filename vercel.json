@@ -8,21 +8,6 @@
     { "source": "/(.*)", "destination": "/" }
   ],
   "routes": [
-    {
-      "src": "^/assets/(.*)$",
-      "headers": {
-        "cache-control": "public, immutable, max-age=31536000"
-      }
-    },
-    {
-      "src": "^/images/(.*)$",
-      "headers": {
-        "cache-control": "public, immutable, max-age=31536000"
-      }
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/index.html"
-    }
+   
   ]
 }
