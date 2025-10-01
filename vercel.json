@@ -4,6 +4,9 @@
   "installCommand": "npm install",
   "framework": "vite",
   "devCommand": "npm run dev",
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/index.html" }
+  ],
   "routes": [
     {
       "src": "^/assets/(.*)$",

@@ -8,7 +8,7 @@ export default defineConfig(({ mode }) => {
   
   return {
     // Set base path for production builds
-    base: mode === 'production' ? './' : '/',
+    base: mode === 'production' ? '/' : '/',
     server: {
       host: "::",
       port: 8080,
